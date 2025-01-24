@@ -1,0 +1,178 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+header { 
+  position: fixed;
+  top: 0px; /* Spacing from the top */
+  width: 100%;
+  background: rgba(28, 3, 43, 0.95); /* Header background color */
+  z-index: 1000;
+  padding: 15px 0px;
+  display: flex;
+  align-items: center; /* Vertically center content, including social icons */
+}
+
+nav {
+  flex: 1; /* Allow nav to grow and occupy space */
+  display: flex;
+  justify-content: center; /* Center navigation links */
+}
+
+nav a {
+  color: #C6C6C6;
+  margin: 0 30px;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: 'Smooch Sans', sans-serif; /* Customize font type */
+  font-weight: bold; /* Set font weight */
+  letter-spacing: 2px; /* Add spacing between letters */
+  
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+  line-height: 30px; /* Ensure consistent height */
+  border: 4px solid transparent; /* Add transparent border for consistent alignment */
+  padding: 0 5px; /* Ensure consistent padding */
+}
+
+nav a:hover {
+  color: #FFFFFF;
+}
+
+.active {
+  color: #FFFFFF; /* Keep the text color white */
+  border-color: rgba(0, 159, 214, 0.87); /* Highlight border */
+  font-weight: bold;
+  border-radius: 4px; /* Rounded corners */
+  line-height: 30px; /* Maintain consistent height */
+  padding: 0 5px; /* Same padding as non-active links */
+}
+
+
+.social-icons {
+  display: flex;
+  gap: 34px; /* Space between social media icons */
+  margin-right: 40px; /* Space from the right edge */
+}
+
+.social-icons img {
+  width: 30px; /* Adjust icon size */
+  height: 30px;
+  filter: brightness(0) invert(1); /* Make icons white (optional) */
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Background overlay */
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: background 1s ease-in-out;
+  filter: blur(5px);
+  opacity: 1.0;
+}
+
+/* Section Styles */
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  position: relative; /* For pseudo-elements */
+  z-index: 1;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9), transparent);
+  transition: opacity 1s ease-in-out;
+  pointer-events: none; /* Prevent interaction */
+}
+
+/* Parallax Backgrounds */
+#section1 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section1_wallpaper.jpeg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+#section2 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section2_wallpaper.jpeg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+#section3 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+#section4 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section4_wallpaper.jpeg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+#section5 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section4_wallpaper.jpeg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Section container */
+section {
+  position: relative; /* Allow pseudo-elements to be positioned relative to the section */
+  z-index: 1; /* Keep section content above the gradients */
+  overflow: hidden; /* Prevent pseudo-elements from overflowing the section */
+}
+
+/* Top and bottom gradient pseudo-elements */
+section::before,
+section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Control the gradient height */
+  z-index: -1; /* Ensure the gradients are behind the content */
+  pointer-events: none; /* Prevent interaction */
+}
+
+/* Top gradient */
+section::before {
+  top: 0; /* Attach to the top of the section */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); /* Dark to transparent */
+}
+
+/* Bottom gradient */
+section::after {
+  bottom: 0; /* Attach to the bottom of the section */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0)); /* Dark to transparent */
+}
+
+/* Back-to-Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none; /* Initially hidden */
+  z-index: 1000;
+}
