@@ -3,40 +3,42 @@ body, html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-align: center;
   scroll-behavior: smooth;
+  background-color: #000000; /* Set background color */
 }
 
 header { 
   position: fixed;
-  top: 0px; /* Spacing from the top */
+  top: 0px;
   width: 100%;
-  background: rgba(28, 3, 43, 0.95); /* Header background color */
+  background: rgba(28, 3, 43, 0.95);
   z-index: 1000;
-  padding: 15px 0px;
+  padding: 15px 20px;
   display: flex;
-  align-items: center; /* Vertically center content, including social icons */
+  align-items: flex-start;
+  justify-content: space-between; /* Space between nav and social icons */
 }
 
 nav {
-  flex: 1; /* Allow nav to grow and occupy space */
   display: flex;
-  justify-content: center; /* Center navigation links */
+  gap: 30px; /* Added gap for better spacing on mobile */
 }
 
 nav a {
   color: #C6C6C6;
-  margin: 0 30px;
   text-decoration: none;
-  font-size: 30px;
-  font-family: 'Smooch Sans', sans-serif; /* Customize font type */
-  font-weight: bold; /* Set font weight */
-  letter-spacing: 2px; /* Add spacing between letters */
-  
-  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
-  line-height: 30px; /* Ensure consistent height */
-  border: 4px solid transparent; /* Add transparent border for consistent alignment */
+  font-size: 18px;
+  font-family: 'Smooch Sans', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  line-height: 24px; /* Ensure consistent height */
+  border: 3px solid transparent; /* Add transparent border for consistent alignment */
   padding: 0 5px; /* Ensure consistent padding */
+
 }
 
 nav a:hover {
@@ -48,25 +50,24 @@ nav a:hover {
   border-color: rgba(0, 159, 214, 0.87); /* Highlight border */
   font-weight: bold;
   border-radius: 4px; /* Rounded corners */
-  line-height: 30px; /* Maintain consistent height */
+  line-height: 24px; /* Maintain consistent height */
   padding: 0 5px; /* Same padding as non-active links */
 }
 
-
 .social-icons {
   display: flex;
-  gap: 34px; /* Space between social media icons */
-  margin-right: 40px; /* Space from the right edge */
+  gap: 24px;
+  padding: 0px 40px;
 }
 
 .social-icons img {
-  width: 30px; /* Adjust icon size */
-  height: 30px;
-  filter: brightness(0) invert(1); /* Make icons white (optional) */
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* Background overlay */
+/* Background Overlay */
 #background {
   position: fixed;
   top: 0;
@@ -81,15 +82,23 @@ nav a:hover {
 
 /* Section Styles */
 section {
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  font-size: 24px;
-  position: relative; /* For pseudo-elements */
+  align-items: flex-start;
+  text-align: left;
+  color: #C73B03;
+  text-shadow: -2px -2px 2px #fff, 2px 2px 2px #000;
+  font-size: 30px;
+  position: relative;
   z-index: 1;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+section h1 {
+  font-size: 2em;
+  margin-bottom: 10px
 }
 
 section::after {
@@ -99,27 +108,83 @@ section::after {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9), transparent);
-  transition: opacity 1s ease-in-out;
-  pointer-events: none; /* Prevent interaction */
+  pointer-events: none;
 }
 
-/* Parallax Backgrounds */
 #section1 {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section1_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('') no-repeat center center fixed;
   background-size: cover;
+  height: auto;
+  padding-top: 4vh;
 }
-
+.responsive-image1{
+width: 90%;        /* Make the image stretch to 100% of the section's width */
+  height: auto;       /* Maintain the image's aspect ratio */
+  max-width: 90%;    /* Ensure the image doesn’t exceed the width of the container */
+  display: block;     /* Remove any extra space below the image */
+}
+	
 #section2 {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section2_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  justify-content: flex-start;
+}
+.responsive-mission{
+width: 90%;        /* Make the image stretch to 100% of the section's width */
+  height: auto;       /* Maintain the image's aspect ratio */
+  max-width: 90%;    /* Ensure the image doesn’t exceed the width of the container */
+  display: block;     /* Remove any extra space below the image */
+  align-items: center;
 }
 
 #section3 {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  justify-content: flex-start;
 }
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+			padding-top: 20px;
+        }
+
+        .team-member {
+            background: rgba(0,0,0,0.7);
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px rgba(100,0,1,1.00);
+            width: 800px;
+            text-align: left;
+			padding-left: 10px;
+            overflow: hidden;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: auto;
+        }
+
+        .team-member h3 {
+            color: #00FDFF;
+			font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .team-member p {
+            color: #FFFFFF;
+            font-size: 0.9em;
+            margin: 0 10px 20px;
+        }
 
 #section4 {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section4_wallpaper.jpeg') no-repeat center center fixed;
@@ -129,13 +194,12 @@ section::after {
 #section5 {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section4_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
-}
-
-/* Section container */
-section {
-  position: relative; /* Allow pseudo-elements to be positioned relative to the section */
-  z-index: 1; /* Keep section content above the gradients */
-  overflow: hidden; /* Prevent pseudo-elements from overflowing the section */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  justify-content: flex-start;
+  padding-bottom: 800px;
 }
 
 /* Top and bottom gradient pseudo-elements */
@@ -162,6 +226,8 @@ section::after {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0)); /* Dark to transparent */
 }
 
+
+
 /* Back-to-Top Button */
 #back-to-top {
   position: fixed;
@@ -173,6 +239,38 @@ section::after {
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  display: none; /* Initially hidden */
+  display: none;
   z-index: 1000;
+}
+
+#back-to-top:hover {
+  background-color: #555;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+  }
+
+  #back-to-top {
+    bottom: 10px;
+    right: 10px;
+  }
 }
