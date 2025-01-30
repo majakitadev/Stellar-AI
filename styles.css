@@ -10,62 +10,111 @@ body, html {
   background-color: #000000; /* Set background color */
 }
 
-header { 
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  background: rgba(28, 3, 43, 0.95);
-  z-index: 1000;
-  padding: 15px 20px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between; /* Space between nav and social icons */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(28, 3, 43, 0.95);
+    z-index: 1000;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center; /* Center align items */
+    justify-content:space-between;
+    height: auto; /* Allow flexibility */
 }
 
+/* Navigation */
 nav {
-  display: flex;
-  gap: 30px; /* Added gap for better spacing on mobile */
+    display: flex;
+    gap: 40px;
+	padding-left: 50px;
 }
 
+/* Navigation Links */
 nav a {
-  color: #C6C6C6;
-  text-decoration: none;
-  font-size: 18px;
-  font-family: 'Smooch Sans', sans-serif;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  line-height: 24px; /* Ensure consistent height */
-  border: 3px solid transparent; /* Add transparent border for consistent alignment */
-  padding: 0 5px; /* Ensure consistent padding */
-
+    color: #C6C6C6;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Smooch Sans', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    line-height: 24px;
+    border: 3px solid transparent;
+    padding: 0 5px;
 }
 
 nav a:hover {
-  color: #FFFFFF;
+    color: #FFFFFF;
 }
 
+/* Active Link */
 .active {
-  color: #FFFFFF; /* Keep the text color white */
-  border-color: rgba(0, 159, 214, 0.87); /* Highlight border */
-  font-weight: bold;
-  border-radius: 4px; /* Rounded corners */
-  line-height: 24px; /* Maintain consistent height */
-  padding: 0 5px; /* Same padding as non-active links */
+    color: #FFFFFF;
+    border-color: rgba(0, 159, 214, 0.87);
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 0 5px;
 }
 
+/* Social Icons */
 .social-icons {
-  display: flex;
-  gap: 24px;
-  padding: 0px 40px;
+    display: flex;
+    gap: 24px;
+    padding-right: 60px;
+}
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.social-icons img {
-  width: 24px;
-  height: 24px;
-  filter: brightness(0) invert(1);
-  transition: transform 0.2s ease, filter 0.2s ease;
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 15px; /* Reduce padding */
+    }
+
+    nav {
+        display: none; /* Hide menu by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Below the header */
+        left: 0;
+        width: 100%;
+        background: rgba(28, 3, 43, 0.95);
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+    }
+
+    /* Show the menu when toggled */
+    .nav-active {
+        display: flex;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+    }
+
+    .hamburger div {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
 }
+
 
 /* Background Overlay */
 #background {
@@ -93,7 +142,7 @@ section {
   position: relative;
   z-index: 1;
   padding-top: 30px;
-  padding-bottom: 50px;
+
 }
 
 section h1 {
@@ -132,15 +181,29 @@ width: 90%;        /* Make the image stretch to 100% of the section's width */
   flex-direction: column; /* Stack elements vertically */
   align-items: center; /* Center horizontally */
   text-align: center;
-  justify-content: flex-start;
+  justify-content:flex-start;
+  padding: 20px; /* Add padding to prevent content from touching edges */
+  width: 100%;
+  min-height: 100vh;
 }
-.responsive-mission{
-width: 90%;        /* Make the image stretch to 100% of the section's width */
-  height: auto;       /* Maintain the image's aspect ratio */
-  max-width: 90%;    /* Ensure the image doesn’t exceed the width of the container */
-  display: block;     /* Remove any extra space below the image */
-  align-items: center;
+.responsive-mission {
+    width: 100%;       /* Full width of its container */
+    max-width: 90vw;   /* Maximum width is 90% of viewport */
+    height: auto;      /* Maintain aspect ratio */
+    display: block;    /* Prevents extra spacing */
+	margin: 0 auto;    /* Center horizontally */
 }
+/* Ensure responsiveness on smaller screens */
+@media (max-width: 768px) {
+    #section2 {
+        background-attachment: scroll; /* Prevents fixed background issues on mobile */
+    }
+
+    .responsive-mission {
+        max-width: 95vw; /* Allow more width on smaller screens */
+    }
+}
+
 
 #section3 {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
@@ -150,6 +213,9 @@ width: 90%;        /* Make the image stretch to 100% of the section's width */
   align-items: center; /* Center horizontally */
   text-align: center;
   justify-content: flex-start;
+  padding: 20px; /* Prevents content from touching edges */
+  width: 100%;
+  min-height: 100vh; /* Ensure section takes full viewport height */
 }
         .team-container {
             display: flex;
@@ -157,39 +223,63 @@ width: 90%;        /* Make the image stretch to 100% of the section's width */
             justify-content: center;
             gap: 40px;
 			padding-top: 20px;
+			width: 100%;
         }
 
         .team-member {
             background: rgba(0,0,0,0.7);
             border-radius: 15px;
             box-shadow: 2px 2px 2px rgba(100,0,1,1.00);
-            width: 800px;
+            width: 100%;
+			max-width: 800px;
             text-align: left;
 			padding-left: 10px;
             overflow: hidden;
+			margin: 0 auto;
         }
 
         .team-member img {
             width: 100%;
             height: auto;
+			display: block;
         }
 
-        .team-member h3 {
-            color: #00FDFF;
-			font-size: 1.2em;
-            margin: 10px 0;
-        }
+/* Ensure responsiveness on smaller screens */
+@media (max-width: 768px) {
+    #section3 {
+        background-attachment: scroll; /* Prevents fixed background issues on mobile */
+    }
 
-        .team-member p {
-            color: #FFFFFF;
-            font-size: 0.9em;
-            margin: 0 10px 20px;
-        }
+    .team-member {
+        max-width: 95vw; /* Allow more width on smaller screens */
+    }
+}
 
 #section4 {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section4_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  justify-content: flex-start;
 }
+.custom-carousel-container {
+    width: 80%; /* Adjust the width (percentage or px) */
+    max-width: 800px; /* Maximum width */
+    height: 700px; /* Set a fixed height */
+    margin: auto; /* Centering the carousel */
+    overflow: hidden; /* Prevent overflow issues */
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+	padding: 10px;
+}
+
+.custom-carousel-container > div {
+    width: 100%;
+    height: 100%;
+}
+
 
 #section5 {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent), url('Section4_wallpaper.jpeg') no-repeat center center fixed;
@@ -274,3 +364,5 @@ section::after {
     right: 10px;
   }
 }
+
+
