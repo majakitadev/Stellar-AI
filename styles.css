@@ -150,7 +150,7 @@ section::after {
 }
 
 #section1 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.3) 100%), url('Section1_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.7) 100%), url('Section1_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   height: auto;
   padding-top: 7vh;
@@ -163,7 +163,7 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
 }
 	
 #section2 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.3) 100%), url('Section2_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.7) 100%), url('Section2_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -193,7 +193,7 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
 
 
 #section3 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.3) 100%), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.7) 100%), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -242,7 +242,7 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
 }
 
 #section4 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.3) 100%), url('Section4_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.7) 100%), url('Section4_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -268,7 +268,7 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
 
 
 #section5 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.3) 100%), url('Section5_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.7) 100%), url('Section5_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
