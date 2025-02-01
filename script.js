@@ -69,9 +69,116 @@ function setSlide(index) {
     $('#imageCarousel').carousel(index);
 }
 
-// Change active thumbnail on slide change
-$('#imageCarousel').on('slide.bs.carousel', function (e) {
-    let newIndex = $(e.relatedTarget).index();
-    $('.thumbnail').removeClass('active');
-    $('.thumbnail').eq(newIndex).addClass('active');
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector("nav");
+	const logo = document.querySelector(".logo img");
+
+    // Toggle menu on hamburger click
+    hamburger.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevents immediate closing when clicking the hamburger
+        navMenu.classList.toggle("nav-active");
+    });
+
+    // Click outside to close menu
+    document.addEventListener("click", function (event) {
+        if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+            navMenu.classList.remove("nav-active");
+        }
+    });
+
+    // Ensure menu items do not close menu on click (optional)
+    navMenu.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevents menu from closing when clicking inside it
+    });
 });
+
+/*carousel*/
+const slides = document.querySelectorAll(".slide");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+const thumbnails = document.querySelectorAll(".thumb");
+const progressBars = document.querySelectorAll(".thumb .progress");
+
+let currentIndex = 0;
+let autoSlideInterval;
+const slideDuration = 10000; // 10 seconds
+
+function updateCarousel() {
+    document.querySelector(".slides").style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateThumbnails();
+    animateProgress();
+}
+
+function updateThumbnails() {
+    let totalSlides = slides.length;
+    
+    let prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    let nextIndex = (currentIndex + 1) % totalSlides;
+
+    let indexes = [prevIndex, currentIndex, nextIndex];
+
+    thumbnails.forEach((thumb, i) => {
+        let slideImg = slides[indexes[i]].querySelector("img").src;
+        thumb.querySelector("img").src = slideImg;
+        thumb.dataset.index = indexes[i];
+        thumb.classList.toggle("active", i === 1); // Center thumbnail is active
+    });
+
+    // Reset progress bars
+    progressBars.forEach(bar => bar.style.width = "0%");
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+}
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+}
+
+function jumpToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+    restartAutoSlide();
+}
+
+function animateProgress() {
+    let activeProgress = progressBars[1]; // Center (active) thumbnail progress
+    if (activeProgress) {
+        activeProgress.style.transition = `width ${slideDuration}ms linear`;
+        activeProgress.style.width = "100%";
+    }
+}
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, slideDuration);
+    animateProgress();
+}
+
+function restartAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+}
+
+// Event Listeners
+prevBtn.addEventListener("click", () => {
+    prevSlide();
+    restartAutoSlide();
+});
+
+nextBtn.addEventListener("click", () => {
+    nextSlide();
+    restartAutoSlide();
+});
+
+thumbnails.forEach((thumb) => {
+    thumb.addEventListener("click", () => jumpToSlide(Number(thumb.dataset.index)));
+});
+
+// Initialize
+updateCarousel();
+startAutoSlide();
+

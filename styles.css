@@ -24,6 +24,10 @@ header {
     height: auto; /* Allow flexibility */
 }
 
+.logo img {
+    display: none; /* Hide logo by default */
+}
+
 /* Navigation */
 nav {
     display: flex;
@@ -51,7 +55,7 @@ nav a:hover {
 /* Active Link */
 .active {
     color: #FFFFFF;
-    border-color: rgba(0, 159, 214, 0.87);
+    border-color: rgba(0,159,214,1.00);
     font-weight: bold;
     border-radius: 4px;
     padding: 0 5px;
@@ -60,9 +64,9 @@ nav a:hover {
 /* MOBILE RESPONSIVENESS */
 @media screen and (max-width: 768px) {
     header {
-        padding: 10px 15px; /* Reduce padding */
+        padding: 30px 15px; /* Reduce padding */
     }
-
+	
     nav {
         display: none; /* Hide menu by default on mobile */
         flex-direction: column;
@@ -70,19 +74,35 @@ nav a:hover {
         top: 60px; /* Below the header */
         left: 0;
         width: 100%;
-        background: rgba(28, 3, 43, 0.95);
+        background: rgba(28, 3, 43, 0.9);
         text-align: center;
-        padding: 10px 0;
+        padding-left: 15px;
     }
 
     nav a {
         display: block;
-        padding: 10px;
+        padding-left: 0px;
     }
-
+	
+   .logo img {
+        position: absolute;
+        top: 15px;   /* Adjust to desired vertical position */
+        right: 35px; /* Adjust to desired horizontal position */
+        width: 110px; /* Adjust size as needed */
+        display: block; /* Make logo visible in mobile view */
+    }
     /* Show the menu when toggled */
     .nav-active {
         display: flex;
+		flex-direction: column;
+        align-items: flex-start; /* Aligns items to the left */
+		gap: 10px;
+        position: fixed;
+        left: 0px;
+        top: 60px; /* Adjust based on your layout */
+        background: rgba(15,1,23,0.95); /* Example background */
+        width: 200px; /* Adjust width as needed */
+		padding-top: 20px;
     }
 
     /* Hamburger Menu */
@@ -91,11 +111,15 @@ nav a:hover {
         cursor: pointer;
         width: 30px;
         height: 30px;
+		position: absolute; /* Ensures it's positioned at the top-left */
+        left: 20px; /* Adjust this value as needed */
+        top: 15px; /* Adjust this value as needed */
+		
     }
 
     .hamburger div {
         width: 30px;
-        height: 4px;
+        height: 3px;
         background-color: white;
         margin: 5px 0;
         transition: all 0.3s ease;
@@ -124,36 +148,51 @@ section {
   align-items: flex-start;
   position: relative;
   z-index: 1;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 .section-title {
-  text-shadow: -2px -2px 2px #fff, 2px 2px 2px #000;
-  color: #C73B03;
-  font-size: 50px;
-  font-weight: 700;
+  color: rgba(0,159,214,1.00);
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.section-description {
+  color: rgba(220,220,220,1.00);
+  font-size: 25px;
+  font-weight: 450;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.section-main-gray {
+  color: rgba(220,220,220,1.00);
+  font-size: 60px;
+  font-weight: 450;
+}
+
+.section-main-blue {
+  color: rgba(0,159,214,1.00);
+  font-size: 60px;
+  font-weight: 600;
 }
 
 section h1 {
   font-size: 2em;
-  margin-bottom: 10px
 }
 
-section::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9), transparent);
-  pointer-events: none;
+section h2 {
+	font-size: 3em;
 }
-
 #section1 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.7) 100%), url('Section1_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 100%), url('Section1_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   height: auto;
-  padding-top: 7vh;
+  padding-top: 4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  justify-content:flex-start;
 }
 .responsive-image1{
 width: 100%;        /* Make the image stretch to 100% of the section's width */
@@ -163,7 +202,7 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
 }
 	
 #section2 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.7) 100%), url('Section2_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 100%), url('Section2_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -171,7 +210,7 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
   text-align: center;
   justify-content:flex-start;
   width: 100%;
-  min-height: 100vh;
+  padding-bottom: 100px;
 }
 .responsive-mission {
     width: 100%;       /* Full width of its container */
@@ -193,7 +232,7 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
 
 
 #section3 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.7) 100%), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 100%), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -201,7 +240,7 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
   text-align: center;
   justify-content: flex-start;
   width: 100%;
-  min-height: 100vh; /* Ensure section takes full viewport height */
+  padding-bottom: 100px;
 }
         .team-container {
             display: flex;
@@ -213,9 +252,21 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
         }
 
         .team-member {
-            background: rgba(0,0,0,0.7);
+            background: rgba(4,7,27,1.00);
             border-radius: 15px;
-            box-shadow: 0px 0px 0px 5px rgba(100, 0, 1, 1); /* Acts like a border */
+            box-shadow: 0px 0px 0px 4px rgba(0,73,98,1.00);; /* Acts like a border */
+            width: 100%;
+			max-width: 800px;
+            text-align: left;
+			padding-left: 10px;
+            overflow: hidden;
+			margin: 0 auto;
+        }
+
+        .team-member2 {
+            background: rgba(0,0,0,1.00);
+            border-radius: 15px;
+            box-shadow: 0px 0px 0px 4px rgba(0,73,98,1.00);; /* Acts like a border */
             width: 100%;
 			max-width: 800px;
             text-align: left;
@@ -242,40 +293,27 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
 }
 
 #section4 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.7) 100%), url('Section4_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 100%), url('Section4_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   align-items: center; /* Center horizontally */
-  text-align: center;
-  justify-content: flex-start;
-}
-.custom-carousel-container {
-    width: 85%; /* Adjust the width (percentage or px) */
-    max-width: 800px; /* Maximum width */
-    height: 680px; /* Set a fixed height */
-    margin: auto; /* Centering the carousel */
-    overflow: hidden; /* Prevent overflow issues */
-	background-color: rgba(0, 0, 0, 0.7);
-	border-radius: 20px;
-	padding-bottom: 20px;
-}
-
-.custom-carousel-container > div {
-    width: 100%;
-    height: 100%;
+  padding-bottom: 50px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
 #section5 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.7) 100%), url('Section5_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 100%), url('Section5_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   align-items: center; /* Center horizontally */
   text-align: center;
   justify-content: flex-start;
-  padding-bottom: 800px;
+  padding-bottom: 610px;
 }
 
 /* Top and bottom gradient pseudo-elements */
@@ -309,7 +347,7 @@ section::after {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #333;
+  background-color: #1A0228;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -341,4 +379,157 @@ section::after {
   }
 }
 
+/*carousel*/
+carousel-body {
+    display: flex;
+    background: #000000;
+	min-height: 350px;
+}
 
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+    border-radius: 15px;
+    aspect-ratio: 16/9;
+	overflow: hidden;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    border-radius: 15px;
+    aspect-ratio: 16/9;
+}
+
+.slide img {
+    max-width: 100%;
+	height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    display: flex;
+	flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    border-radius: 15px 0 0 15px;
+}
+
+.overlay h1 {
+	position: relative;
+	font-family: "Roboto", sans-serif;
+	color: rgba(255,255,255,1.00);
+    font-size: clamp(5px, 2.5vw, 20px);
+    font-weight: 600;
+	padding-left: 25px;
+	padding-right: 10px;
+	line-height: 1.5; /* Adds spacing between lines of text */
+
+}
+
+.overlay h2 {
+	position: relative;
+	font-family: "Roboto", sans-serif;
+	color: rgba(255,255,255,1.00);
+    font-size: clamp(5px, 1.5vw, 12px);
+    font-weight: 300;
+	padding-left: 25px;
+	padding-right: 10px;
+	line-height: 1.5; /* Adds spacing between lines of text */
+	margin-top: 5px; /* Adds space between each h2 element */
+}
+
+carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 8px 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    bottom: 0;  /* Move the thumbnails 50px below the carousel */
+    left: 50%;
+    transform: translateX(-50%);  /* Center horizontally */
+    z-index: 10;
+}
+
+.thumb {
+    width: 80px;
+    height: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    
+}
+
+.thumb.active img {
+    border: 3px solid #ff9800;
+}
+
+/* Overlay Effect on Inactive Thumbnails */
+.thumb::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 30% black opacity */
+    border-radius: 10px;
+    transition: opacity 0.7s ease-in-out;
+}
+
+/* Remove overlay for active thumbnail */
+.thumb.active::before {
+    opacity: 0;
+}
+
+.thumb.active {
+    transform: scale(1.2); /* Make active thumbnail 20% bigger */
+}
