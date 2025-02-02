@@ -6,7 +6,7 @@ const progressBars = document.querySelectorAll(".thumb .progress");
 
 let currentIndex = 0;
 let autoSlideInterval;
-const slideDuration = 10000; // 10 seconds
+const slideDuration = 8000; // 8 seconds
 
 function updateCarousel() {
     document.querySelector(".slides").style.transform = `translateX(-${currentIndex * 100}%)`;
