@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.getElementById("loading-screen").classList.add("hidden");
+    }, 5000); // Adjust delay if needed
+});
+
 document.addEventListener("scroll", () => {
   const sections = document.querySelectorAll("section");
   const scrollPosition = window.scrollY;
