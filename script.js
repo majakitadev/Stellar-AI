@@ -62,28 +62,13 @@ function handleScroll() {
   });
 }
 
-// Initialize the scroll listener
-document.addEventListener("scroll", handleScroll);
-
-function setSlide(index) {
-    $('#imageCarousel').carousel(index);
-}
-
-// Change active thumbnail on slide change
-$('#imageCarousel').on('slide.bs.carousel', function (e) {
-    let newIndex = $(e.relatedTarget).index();
-    $('.thumbnail').removeClass('active');
-    $('.thumbnail').eq(newIndex).addClass('active');
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector("nav");
-	const logo = document.querySelector(".logo img");
+    const navMenu = document.querySelector(".nav-links"); // Update selector if needed
 
     // Toggle menu on hamburger click
-    hamburger.addEventListener("click", function (event) {
-        event.stopPropagation(); // Prevents immediate closing when clicking the hamburger
+    hamburger.addEventListener("click", function () {
+        console.log("Hamburger clicked!"); // Debugging
         navMenu.classList.toggle("nav-active");
     });
 
@@ -93,10 +78,4 @@ document.addEventListener("DOMContentLoaded", function () {
             navMenu.classList.remove("nav-active");
         }
     });
-
-    // Ensure menu items do not close menu on click (optional)
-    navMenu.addEventListener("click", function (event) {
-        event.stopPropagation(); // Prevents menu from closing when clicking inside it
-    });
 });
-
