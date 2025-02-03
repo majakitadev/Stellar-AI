@@ -169,7 +169,7 @@ section {
 }
 .section-title {
   color: rgba(0,159,214,1.00);
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 600;
   margin-bottom: 0;
 }
@@ -310,7 +310,7 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
 }
 
 #section4 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 100%), url('Section4_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 100%), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -324,8 +324,8 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 750px;
-    height: 422px;
+    max-width: 800px;
+    height: 450px;
     border-radius: 15px;
 	box-shadow: 0px 0px 0px 4px rgba(0,73,98,1.00);; /* Acts like a border */
 	overflow: hidden;
@@ -478,7 +478,7 @@ carousel-button {
 
 
 #section5 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 100%), url('Section5_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 100%), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -532,7 +532,7 @@ carousel-button {
 
 .footer-logo {
 	width: 240px;
-	padding-top: 19px;
+	padding-top: 8px;
 }
 
 .footer-section h3 {
