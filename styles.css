@@ -34,7 +34,7 @@ header {
     width: 100%;
     background: rgba(28, 3, 43, 0.95);
     z-index: 1000;
-    padding: 15px 20px;
+    padding: 20px 20px;
     display: flex;
     align-items: center; /* Center align items */
     justify-content:center;
@@ -43,6 +43,13 @@ header {
 
 .logo img {
     display: none; /* Hide logo by default */
+}
+
+.logo-main img {
+     position: absolute;
+     top: 19px;   /* Adjust to desired vertical position */
+     left: 35px; /* Adjust to desired horizontal position */
+     width: 170px; /* Adjust size as needed */
 }
 
 /* Navigation */
@@ -55,12 +62,12 @@ nav {
 nav a {
     color: #C6C6C6;
     text-decoration: none;
-    font-size: 21px;
+    font-size: 28px;
     font-family: 'Smooch Sans', sans-serif;
     font-weight: bold;
     letter-spacing: 1.5px;
     transition: color 0.3s ease, background-color 0.3s ease;
-    line-height: 24px;
+    line-height: 30px;
     border: 3px solid transparent;
     padding: 0 5px;
 }
@@ -79,7 +86,7 @@ nav a:hover {
 }
 
 /* MOBILE RESPONSIVENESS */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     header {
         padding: 30px 15px; /* Reduce padding */
     }
@@ -103,11 +110,15 @@ nav a:hover {
 	
    .logo img {
         position: absolute;
-        top: 15px;   /* Adjust to desired vertical position */
-        right: 35px; /* Adjust to desired horizontal position */
+        top: 19px;   /* Adjust to desired vertical position */
+        right: 40px; /* Adjust to desired horizontal position */
         width: 110px; /* Adjust size as needed */
         display: block; /* Make logo visible in mobile view */
     }
+	
+	.logo-main img {
+    display: none; /* Hide logo by in mobile */
+}
     /* Show the menu when toggled */
     .nav-active {
         display: flex;
@@ -204,7 +215,7 @@ section h2 {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 100%), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   height: auto;
-  padding-top: 4vh;
+  padding-top: 6vh;
   display: flex;
   flex-direction: column;
   align-items: center; /* Center horizontally */
@@ -485,7 +496,7 @@ carousel-button {
   align-items: center; /* Center horizontally */
   text-align: center;
   justify-content: flex-start;
-  padding-bottom: 160px;
+  padding-bottom: 180px;
 }
 
 /* Back-to-Top Button */
@@ -584,14 +595,14 @@ carousel-button {
 
 
 /* Media Queries for Mobile */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   nav {
     flex-direction: column;
     align-items: center;
   }
 
   nav a {
-    font-size: 16px;
+    font-size: 22px;
     margin-bottom: 15px;
   }
 
