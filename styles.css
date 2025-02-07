@@ -111,7 +111,7 @@ nav a:hover {
    .logo img {
         position: absolute;
         top: 19px;   /* Adjust to desired vertical position */
-        right: 40px; /* Adjust to desired horizontal position */
+        right: 50px; /* Adjust to desired horizontal position */
         width: 110px; /* Adjust size as needed */
         display: block; /* Make logo visible in mobile view */
     }
@@ -308,6 +308,23 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
             height: auto;
 			display: block;
         }
+
+        .logo-link {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 100;
+            width: 50px; /* Adjust logo size */
+            height: 50px;
+         }
+
+		 .logo-link img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          border-radius: 50%;
+         }
+
 
 /* Ensure responsiveness on smaller screens */
 @media (max-width: 768px) {
