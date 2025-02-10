@@ -259,7 +259,8 @@ width: 100%;        /* Make the image stretch to 100% of the section's width */
       display: flex;
       align-items: center;
       font-family: Courier, sans-serif;
-      padding: 8px;
+	  font-size: 14px;
+      padding: 5px;
       background-color: rgba(0,0,0,0.75);
       border: 1px solid rgba(184,184,184,0.35);
       border-radius: 5px;
