@@ -212,23 +212,118 @@ section h2 {
 	font-size: 3em;
 }
 #section1 {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 100%), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 100%), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;
   height: auto;
-  padding-top: 6vh;
+  padding-top: 7vh;
   display: flex;
   flex-direction: column;
   align-items: center; /* Center horizontally */
   text-align: center;
   justify-content:flex-start;
 }
+
+.video-section {
+      position: relative;
+      width: 100%;
+      max-width: 1800px; /* Set your desired max width */
+      height: 350px;     /* Set your desired height */
+      margin: 20px auto; /* Center the section */
+      overflow: hidden;
+      border-radius: 5px; /* Optional: Add rounded corners */
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;  /* Ensures the video covers the entire container without distortion */
+    }
+    .text-overlay {
+      position: absolute;
+	  line-height: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.9); /* Add text shadow for better readability */
+    }
+
 .responsive-image1{
 width: 100%;        /* Make the image stretch to 100% of the section's width */
   height: auto;       /* Maintain the image's aspect ratio */
   max-width: 1800px;    /* Ensure the image doesn’t exceed the width of the container */
   display: block;     /* Remove any extra space below the image */
 }
-	
+
+.container {
+      display: flex;
+      align-items: center;
+      font-family: Courier, sans-serif;
+      padding: 8px;
+      background-color: rgba(0,0,0,0.75);
+      border: 1px solid rgba(184,184,184,0.35);
+      border-radius: 5px;
+      max-width: 400px;
+    }
+    .text-to-copy {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-right: 10px;
+    }
+    .copy-btn {
+      background-color: #009FD6;
+      color: white;
+	  font-family: Courier, sans-serif;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .copy-btn:hover {
+      background-color: #005977;
+    }
+ 
+    .copy-message {
+      margin-left: 10px;
+      color: #6E6E6E;
+      font-size: 14px;
+      display: none;
+}
+
+.menu-section {
+    flex: 1;
+    min-width: 250px;
+	padding-top: 1px;
+}
+
+.menu-section h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.menu-section ul {
+    font-size: 35px;
+    line-height: 1.3;
+    list-style: none;
+    padding: 0;
+}
+
+.menu-section ul li {
+    margin: 5px 0;
+}
+
+.menu-section ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.menu-section ul li a:hover {
+    color: #f39c12;
+}
 #section2 {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 100%), url('Section3_wallpaper.jpeg') no-repeat center center fixed;
   background-size: cover;

@@ -85,3 +85,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+function copyText() {
+    const textToCopy = document.getElementById('textToCopy').innerText;
+    const copyMessage = document.getElementById('copyMessage');
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      copyMessage.style.display = 'inline';
+      setTimeout(() => {
+        copyMessage.style.display = 'none';
+      }, 3000); // Hide message after 2 seconds
+    }).catch(err => {
+      console.error('Failed to copy text: ', err);
+    });
+  }
