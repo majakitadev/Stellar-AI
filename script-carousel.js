@@ -36,7 +36,16 @@ function updateThumbnails() {
         thumbnails[2].dataset.index = currentIndex + 1;
         thumbnails[1].classList.add("active");
 
-    } else if (currentIndex === totalSlides - 1) {
+    } else if (currentIndex === totalSlides - 1 || currentIndex === 0) {
+    if (currentIndex === 0) {
+        // First slide after looping: Update the previous thumbnail to the last slide
+        thumbnails[0].querySelector("img").src = slides[totalSlides - 1].querySelector("img").src;
+        thumbnails[0].dataset.index = totalSlides - 1;
+    } else {
+        // Last slide logic as before
+        thumbnails[0].querySelector("img").src = slides[currentIndex - 1].querySelector("img").src;
+        thumbnails[0].dataset.index = currentIndex - 1;
+    }
         // Last slide: Show previous, center current, hide next
         thumbnails[0].style.display = "block"; // Previous slide
         thumbnails[1].style.display = "block"; // Active slide (center)
@@ -72,8 +81,10 @@ function updateThumbnails() {
 function nextSlide() {
     if (currentIndex < slides.length - 1) {
         currentIndex++;
-        updateCarousel();
+    } else {
+        currentIndex = 0;  // Loop back to the first slide
     }
+    updateCarousel();
 }
 
 function prevSlide() {
@@ -99,11 +110,7 @@ function animateProgress() {
 
 function startAutoSlide() {
     autoSlideInterval = setInterval(() => {
-        if (currentIndex < slides.length - 1) {
-            nextSlide();
-        } else {
-            clearInterval(autoSlideInterval); // Stop auto-slide at last slide
-        }
+nextSlide();
     }, slideDuration);
     animateProgress();
 }
